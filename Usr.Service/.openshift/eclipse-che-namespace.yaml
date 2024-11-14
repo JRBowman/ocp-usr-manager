@@ -1,0 +1,7 @@
+﻿kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: eclipse-che
+spec:
+  finalizers:
+    - kubernetes

@@ -19,7 +19,7 @@ namespace Usr.Service.Services
             _clientConfiguration = KubernetesClientConfiguration.InClusterConfig();
             _client = new Kubernetes(_clientConfiguration);
 
-            Console.WriteLine($"OpenShift DI Initialized for Context: {_clientConfiguration.CurrentContext} using serviceaccount: {_clientConfiguration.Username}...");
+            Console.WriteLine($"OpenShift DI Initialized for Context: {_clientConfiguration.CurrentContext} using serviceaccount: {_clientConfiguration.Namespace}... | Token: {_clientConfiguration.AccessToken}");
         }
 
         public async Task<string> UpdateHTPasswd(string htpassPath)

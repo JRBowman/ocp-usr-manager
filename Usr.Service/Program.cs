@@ -10,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<OpenShiftClient>();
+builder.Services.AddSingleton<Htpasswd>();
 
 var app = builder.Build();
 

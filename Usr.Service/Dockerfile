@@ -13,8 +13,7 @@ WORKDIR "/src/."
 RUN dotnet build "Usr.Service.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN sudo apt-get -y update && sudo apt-get -y install apache2-utils
-RUN dotnet publish "Usr.Service.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Usr.Service.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
